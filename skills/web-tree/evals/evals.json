@@ -1,0 +1,41 @@
+[
+  {
+    "name": "obsidian-help-root",
+    "prompt": "/web-tree https://help.obsidian.md/",
+    "expected": {
+      "description": "Root page of Obsidian Help. Should produce a hierarchical tree from the sidebar navigation with collapsible sections. Expect folder nodes like 'Getting started', 'Editing and formatting', 'Plugins', etc. Tree should have many nodes (likely > 50, so may show collapsed top-level). JSON file saved to web-tree-output/help.obsidian.md.json. Scope should be 'full'.",
+      "must_contain": [
+        "Site name identified (Obsidian Help or similar)",
+        "Hierarchical tree structure with folders and pages",
+        "JSON file saved to disk",
+        "scope is full (root page)"
+      ]
+    }
+  },
+  {
+    "name": "myscript-subpage",
+    "prompt": "/web-tree https://developer.myscript.com/docs/interactive-ink/4.3/concepts/ink-interpretation/",
+    "expected": {
+      "description": "Sub-page deep in MyScript developer docs. Should identify this as a sub-page within 'Concepts' section. Current page should be marked. Nav tree should reflect the sidebar of the documentation site. Scope should be 'partial' with current_page set.",
+      "must_contain": [
+        "Current page identified and marked",
+        "scope is partial (sub-page)",
+        "Navigation tree extracted from sidebar",
+        "JSON file saved with current_page field set"
+      ]
+    }
+  },
+  {
+    "name": "react-learn",
+    "prompt": "/web-tree https://react.dev/learn",
+    "expected": {
+      "description": "React docs 'Learn' section. Modern docs site with sidebar nav. Should extract the Learn section navigation with topics like 'Describing the UI', 'Adding Interactivity', 'Managing State', etc. Each topic should have sub-pages listed.",
+      "must_contain": [
+        "React documentation site identified",
+        "Learn section navigation extracted",
+        "Hierarchical structure with topic groups and individual pages",
+        "JSON file saved"
+      ]
+    }
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "plugins": {
+    "context7@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/gabcamilo/.claude/plugins/cache/claude-plugins-official/context7/7994c270e575",
+        "version": "7994c270e575",
+        "installedAt": "2026-03-18T20:45:48.718Z",
+        "lastUpdated": "2026-03-19T21:01:11.276Z",
+        "gitCommitSha": "6b70f99f769f58b9b642dc8a271936b17862cf8c"
+      }
+    ],
+    "hookify@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/gabcamilo/.claude/plugins/cache/claude-plugins-official/hookify/7994c270e575",
+        "version": "7994c270e575",
+        "installedAt": "2026-03-19T15:32:58.621Z",
+        "lastUpdated": "2026-03-19T21:01:11.280Z",
+        "gitCommitSha": "d53f6ca4cdb000c671dfdc1c181b021e97c25505"
+      }
+    ]
+  }
+}
