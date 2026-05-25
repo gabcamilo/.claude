@@ -1,0 +1,23 @@
+skills/code-review/SKILL.md
+  s_d20493b339919f::t_c4c30c878be973 4
+  s_d20493b339919f::t_e6ffb27088a9d0 47,88-419,782-787
+  s_d20493b339919f::t_21eec3a9edf5d4 689
+  s_d20493b339919f::t_f394061f7ad746 76-77
+  s_d20493b339919f::t_22e47ef5233590 758
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.1",
+  "base_commit_sha": "15438b84f5470aec6292d51f85605c113d4801e2",
+  "prompts": {},
+  "sessions": {
+    "s_d20493b339919f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "db954dbf-72bc-473e-92a8-3b151cf5ce4a",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "gabcamilo <gabccamilo@gmail.com>"
+    }
+  }
+}
