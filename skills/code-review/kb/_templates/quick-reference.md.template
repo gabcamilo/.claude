@@ -1,0 +1,27 @@
+---
+title: "{DOMAIN} Quick Reference"
+domain: "{DOMAIN}"
+last_validated: "{DATE}"
+---
+
+# {DOMAIN} — Quick Reference
+
+## Decision Matrix
+
+| Situation | Check | Severity if violated |
+|-----------|-------|---------------------|
+| {situation} | {what to verify} | {blocking / warning / suggestion} |
+
+## Common Patterns
+
+| Pattern | Correct | Incorrect |
+|---------|---------|-----------|
+| {pattern} | {right way} | {wrong way} |
+
+## Red Flags
+
+- {Thing that should immediately catch a reviewer's attention}
+
+## Green Flags
+
+- {Thing that indicates good practice}

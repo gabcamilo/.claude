@@ -1,0 +1,40 @@
+---
+title: "{PATTERN_TITLE}"
+domain: "{DOMAIN}"
+confidence: 0.95
+last_validated: "{DATE}"
+related:
+  - title: "{RELATED_PATTERN}"
+    path: "{RELATIVE_PATH}"
+---
+
+# {PATTERN_TITLE}
+
+## When to Use
+
+- {Use case 1}
+- {Use case 2}
+- {Use case 3}
+
+## Implementation
+
+```java
+{Production-ready code example — 30-100 lines max.
+Should be copy-paste ready with clear naming.}
+```
+
+## Configuration
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| {param} | {default} | {what it controls} |
+
+## Review Checklist
+
+- [ ] {What a reviewer should verify about this pattern}
+- [ ] {Second verification point}
+- [ ] {Third verification point}
+
+## See Also
+
+- [{RELATED_PATTERN}]({RELATIVE_PATH}) — {connection}

@@ -1,0 +1,45 @@
+{
+  "skill_name": "code-review",
+  "assertion_design": {
+    "tiers": {
+      "skill_structural": "Graded ONLY for with_skill runs. Verifies template formatting, versioning, issue IDs. NOT used in cross-config comparison.",
+      "content_quality": "Graded for BOTH configs. Ground-truth findings, severity accuracy, no false positives, project-rules awareness. This is the real comparison.",
+      "consistency": "Graded across multiple runs of same config. Same critical issues found, same severity classifications. Requires 3+ runs."
+    },
+    "ground_truth_issues": [
+      "Unbounded recursive retry in ShopifyProductGatewayAdapter.fetchProductPage() — real bug, all runs should find it",
+      "No error handling in ProductImportWorker.execute() — jobs stuck in IN_PROGRESS forever",
+      "GraphQL page size of 5 (Shopify supports 250) — massive performance gap",
+      "N+1 variant upserts — individual SQL per variant in a loop",
+      "@Entity on ImportJob in domain layer — pre-existing tech debt (Product.java does the same)",
+      "ProductImportConsumer injects concrete class, not port interface — architecture violation",
+      "Missing input validation on Work Queue endpoint — security gap"
+    ]
+  },
+  "evals": [
+    {
+      "id": 1,
+      "name": "full-review-product-import",
+      "prompt": "Review my changes on this branch. I've been building a product import pipeline — it fetches products from Shopify's GraphQL API, maps them to our domain, and persists them. The changes span domain models, ports, application services, infrastructure adapters, and tests.",
+      "expected_output": "A comprehensive review covering all 5 scopes with ground-truth issues identified, severity proportional to impact, pre-existing patterns classified as tech debt, and project-specific rules cited.",
+      "files": [],
+      "metadata_file": "iteration-3/eval_metadata_eval1.json"
+    },
+    {
+      "id": 2,
+      "name": "scoped-review-security-architecture",
+      "prompt": "Review my changes but focus only on security and architecture. I want to make sure the hexagonal architecture is respected and there are no security issues before I submit the PR.",
+      "expected_output": "A review covering ONLY architecture and security with port/adapter violations identified, input validation gaps caught, and @Entity-on-domain handled as tech debt.",
+      "files": [],
+      "metadata_file": "iteration-3/eval_metadata_eval2.json"
+    },
+    {
+      "id": 3,
+      "name": "targeted-review-performance",
+      "prompt": "Can you review ProductImportWorker.java for performance issues? It's the core loop that fetches pages of products from Shopify and persists them. I'm worried about N+1 queries and rate limiting.",
+      "expected_output": "A focused performance review of the import worker finding N+1 patterns, page size issues, and accurately describing rate limiting — with no scope leakage into other review areas.",
+      "files": ["src/main/java/com/mercadolibre/mp_op_pp_shopify_shipping_api/application/service/productimport/ProductImportWorker.java"],
+      "metadata_file": "iteration-3/eval_metadata_eval3.json"
+    }
+  ]
+}

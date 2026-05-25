@@ -1,0 +1,41 @@
+---
+title: "{CONCEPT_TITLE}"
+domain: "{DOMAIN}"
+confidence: 0.95
+last_validated: "{DATE}"
+related:
+  - title: "{RELATED_CONCEPT}"
+    path: "{RELATIVE_PATH}"
+---
+
+# {CONCEPT_TITLE}
+
+## Overview
+
+{2-3 sentences explaining the concept and why it matters for code review.}
+
+## The Rule
+
+{Core principle or convention, stated clearly and concisely.}
+
+```java
+// Correct
+{Short code example showing the right way — 10-30 lines max}
+
+// Wrong
+{Short code example showing the violation — 5-15 lines max}
+```
+
+## Quick Reference
+
+| Aspect | Expected | Violation |
+|--------|----------|-----------|
+| {aspect} | {what correct looks like} | {what a violation looks like} |
+
+## Common Mistakes
+
+1. **{Mistake}** — {Why it's wrong and what to do instead}
+
+## Related
+
+- [{RELATED_CONCEPT}]({RELATIVE_PATH}) — {one-line connection}

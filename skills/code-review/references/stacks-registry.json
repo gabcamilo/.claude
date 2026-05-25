@@ -1,0 +1,93 @@
+{
+  "stacks": [
+    {
+      "id": "java-spring-fury",
+      "name": "Java / Spring Boot / Fury",
+      "indicators": {
+        "buildFiles": ["build.gradle", "build.gradle.kts", "pom.xml"],
+        "configFiles": ["application.yml", "application.properties", "application-*.yml"],
+        "infraFiles": [".fury/", "fury.yml"],
+        "patterns": {
+          "packages": ["com.mercadolibre", "org.springframework"],
+          "imports": ["org.springframework.boot", "com.mercadolibre"],
+          "directories": ["src/main/java", "src/test/java"]
+        }
+      },
+      "architecture": {
+        "type": "hexagonal",
+        "layers": ["domain", "application/service", "infrastructure"],
+        "rules": [
+          "Domain layer has no framework dependencies",
+          "Ports define interfaces in domain, adapters implement in infrastructure",
+          "Application services orchestrate domain logic through ports",
+          "Inbound adapters (REST controllers) live in infrastructure/adapter/in/",
+          "Outbound adapters (persistence, integrations) live in infrastructure/adapter/out/"
+        ]
+      },
+      "kbDomains": ["java-spring", "fury-infrastructure", "security", "shopify"],
+      "docsAgents": {
+        "fury": "FuryDocsExplorer",
+        "general": "DocsExplorer"
+      },
+      "docsSources": [
+        {
+          "technology": "Spring Boot",
+          "method": "context7",
+          "libraryId": "spring-boot"
+        },
+        {
+          "technology": "Fury Infrastructure",
+          "method": "agent",
+          "agentType": "FuryDocsExplorer"
+        },
+        {
+          "technology": "Shopify API",
+          "method": "mcp",
+          "tools": ["mcp__shopify-dev__search_docs_chunks", "mcp__shopify-dev__learn_shopify_api"]
+        },
+        {
+          "technology": "Security Rules",
+          "method": "file",
+          "paths": [".agentic-rules/", "AGENTS.md"]
+        }
+      ],
+      "reviewScopes": [
+        {
+          "id": "architecture",
+          "name": "Architecture Compatibility",
+          "agent": "references/agents/architecture-reviewer.md",
+          "priority": 1,
+          "description": "Hexagonal architecture compliance, layer violations, dependency direction"
+        },
+        {
+          "id": "code-quality",
+          "name": "Code Quality (DRY, SOLID, Clean Code)",
+          "agent": "references/agents/code-quality-reviewer.md",
+          "priority": 3,
+          "description": "Duplication, naming, complexity, single responsibility, interface segregation"
+        },
+        {
+          "id": "security",
+          "name": "Security",
+          "agent": "references/agents/security-reviewer.md",
+          "priority": 2,
+          "description": "OWASP top 10, secrets handling, injection, auth, .agentic-rules compliance"
+        },
+        {
+          "id": "test-coverage",
+          "name": "Test Coverage",
+          "agent": "references/agents/test-coverage-reviewer.md",
+          "priority": 4,
+          "description": "Test existence for changes, coverage gaps, test quality and patterns"
+        },
+        {
+          "id": "performance",
+          "name": "Performance",
+          "agent": "references/agents/performance-reviewer.md",
+          "priority": 5,
+          "description": "N+1 queries, blocking calls, resource leaks, unbounded collections, scalability"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+# Code Review Knowledge Base Registry
+# Non-volatile knowledge for review subagents — principles, conventions, patterns.
+# Live docs (DocsExplorer/FuryDocsExplorer) handle volatile API specifics.
+
+version: 1
+last_updated: "2026-04-02"
+
+# Size constraints (enforced by convention)
+constraints:
+  concept_max_lines: 150
+  pattern_max_lines: 200
+  quick_reference_max_lines: 100
+
+# Domain definitions
+domains:
+  java-spring:
+    name: "Java / Spring Boot"
+    description: "Spring Boot conventions, JPA patterns, hexagonal architecture rules"
+    confidence: 0.95
+    entry_point: java-spring/index.md
+    files:
+      - java-spring/index.md
+      - java-spring/quick-reference.md
+      - java-spring/concepts/hexagonal-architecture.md
+      - java-spring/concepts/spring-boot-conventions.md
+      - java-spring/concepts/jpa-patterns.md
+      - java-spring/concepts/testing-conventions.md
+      - java-spring/patterns/port-adapter-pattern.md
+      - java-spring/patterns/service-orchestration.md
+      - java-spring/patterns/rest-controller-pattern.md
+      - java-spring/patterns/repository-pattern.md
+
+  fury-infrastructure:
+    name: "MercadoLibre Fury"
+    description: "Fury ecosystem conventions — secrets, BigQueue, KVS, deployment, observability"
+    confidence: 0.95
+    entry_point: fury-infrastructure/index.md
+    files:
+      - fury-infrastructure/index.md
+      - fury-infrastructure/quick-reference.md
+      - fury-infrastructure/concepts/fury-secrets.md
+      - fury-infrastructure/concepts/bigqueue-patterns.md
+      - fury-infrastructure/concepts/kvs-usage.md
+      - fury-infrastructure/concepts/fury-deployment.md
+      - fury-infrastructure/patterns/fury-rest-client.md
+      - fury-infrastructure/patterns/scope-configuration.md
+      - fury-infrastructure/patterns/observability-pattern.md
+
+  security:
+    name: "Security"
+    description: "OWASP top 10, secrets handling, input validation, logging safety"
+    confidence: 0.95
+    entry_point: security/index.md
+    files:
+      - security/index.md
+      - security/quick-reference.md
+      - security/concepts/input-validation.md
+      - security/concepts/secrets-handling.md
+      - security/concepts/logging-safety.md
+      - security/patterns/parameterized-queries.md
+      - security/patterns/secure-random-usage.md
+      - security/patterns/hmac-validation.md
+
+  shopify:
+    name: "Shopify Integration"
+    description: "Shopify GraphQL API conventions, webhooks, rate limiting, bulk operations"
+    confidence: 0.90
+    entry_point: shopify/index.md
+    files:
+      - shopify/index.md
+      - shopify/quick-reference.md
+      - shopify/concepts/graphql-api-conventions.md
+      - shopify/concepts/webhook-handling.md
+      - shopify/concepts/rate-limiting.md
+      - shopify/patterns/bulk-operations.md
+      - shopify/patterns/fulfillment-flow.md
+
+# Maps review scopes to KB domains they should receive as context.
+# A reviewer gets quick-reference + all concepts from its mapped domains.
+# Patterns are included only when the changes touch relevant areas.
+scope_mappings:
+  architecture:
+    - java-spring
+    - fury-infrastructure
+  code-quality:
+    - java-spring
+  security:
+    - security
+    - fury-infrastructure
+  test-coverage:
+    - java-spring
+  performance:
+    - java-spring
+    - fury-infrastructure
+    - shopify
