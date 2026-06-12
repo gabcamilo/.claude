@@ -5,8 +5,10 @@
 | Field | Value |
 |---|---|
 | **Version** | v{VERSION} |
+| **Context** | {CONTEXT_ID} |
 | **Date** | {DATE} |
 | **Stack** | {DETECTED_STACK} |
+| **Branch** | {WORKING_BRANCH} |
 | **Scopes Reviewed** | {SCOPE_LIST} |
 | **Changes Source** | {SOURCE: diff / PR #N / files / commit SHA} |
 | **Verdict** | {VERDICT: approve / request changes / needs discussion} |
