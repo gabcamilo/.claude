@@ -1,0 +1,32 @@
+skills/code-review/references/context-commands.md
+  s_0a920fa542aff3::t_072aa020d699af 1-186
+skills/code-review/scripts/context.py
+  s_0a920fa542aff3::t_17badca1ba370a 1-606
+skills/code-review/SKILL.md
+  s_0a920fa542aff3::t_04f59f5157dac7 4,9-61,82,99-108,113-116,120-121,123,128,133,138-141,147-260,264,266,268-270,272,274,276,278-279,284,301,305,313,318-327,332,352,354,358,364,368,385,389,393-394,398,402,406,411-412,422,426,430,432,446,458,462,464,466,468,470,472,482-483,485-486,491,502,504-505,510,512,516,518-524,526,530,532,534,537-538,540-541,544,547-548,550-551,553-554,562,564,577,580,583-587,596-597,600,602,604,606,608,611-620,623,625,628-631,634,638,643,646,648,650,652-663,667,669-674,676,678,680-684,688,690-691,693,695-697,700-715,719-724,726,732-733,742,748-750,754-756,762,765,769-773
+skills/code-review/scripts/fetch_pr.py
+  s_0a920fa542aff3::t_fd2a116eba87e3 1-136
+skills/code-review/references/review-template.md
+  s_0a920fa542aff3::t_a340dc36df97d3 8,11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "b96b721ebe66cc199856ae6dda80e9fb05f0f864",
+  "prompts": {},
+  "humans": {
+    "h_c153141bb12c22": {
+      "author": "gabcamilo <gabccamilo@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_0a920fa542aff3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a7803b4c-cd0e-460f-a083-2d25b31b96a3",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "gabcamilo <gabccamilo@gmail.com>"
+    }
+  }
+}
